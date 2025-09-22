@@ -244,7 +244,7 @@
                             <textarea id="bot-description" rows="3" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-secondary" required></textarea>
                         </div>
                         <div class="mb-4">
-                            <label for="bot-price" class="block mb-2">Price ($)</label>
+                            <label for="bot-price" class="block mb-2">Price (₹)</label>
                             <input type="number" id="bot-price" step="0.01" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-secondary" required>
                         </div>
                         <div class="mb-6">
@@ -269,12 +269,12 @@
         <section id="payment-page" class="hidden max-w-lg mx-auto animate-fade-in">
              <div class="bg-darkcard p-8 rounded-lg shadow-2xl">
                  <h2 class="text-3xl font-bold text-center mb-2 text-white">Complete Your Purchase</h2>
-                 <p class="text-center text-gray-400 mb-6">To buy "<span id="payment-product-name" class="font-bold text-primary"></span>" for $<span id="payment-product-price" class="font-bold text-primary"></span></p>
+                 <p class="text-center text-gray-400 mb-6">To buy "<span id="payment-product-name" class="font-bold text-primary"></span>" for ₹<span id="payment-product-price" class="font-bold text-primary"></span></p>
                 
                  <div class="text-center mb-6">
                      <p class="mb-2">Scan the QR code or use the UPI ID below:</p>
                      <img src="https://placehold.co/250x250/FFFFFF/000000?text=UPI+QR+Code" alt="UPI QR Code" class="mx-auto rounded-lg mb-4">
-                     <p class="font-mono bg-gray-900 inline-block px-4 py-2 rounded-md">shebinraju2021@upi</p>
+                     <p class="font-mono bg-gray-900 inline-block px-4 py-2 rounded-md">shebinraju2021@oksbi</p>
                  </div>
 
                  <form id="payment-verification-form">
@@ -328,7 +328,7 @@
                     <textarea id="update-bot-description" rows="3" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-secondary" required></textarea>
                 </div>
                 <div class="mb-4">
-                    <label for="update-bot-price" class="block text-gray-300 mb-2">Price ($)</label>
+                    <label for="update-bot-price" class="block text-gray-300 mb-2">Price (₹)</label>
                     <input type="number" step="0.01" id="update-bot-price" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-secondary" required>
                 </div>
                 <div class="mb-6">
@@ -584,7 +584,7 @@
                             <p class="text-gray-400 mb-4 h-24 overflow-y-auto">${product.description}</p>
                         </div>
                         <div class="p-6 bg-gray-900">
-                             <p class="text-3xl font-bold text-primary mb-4">$${parseFloat(product.price).toFixed(2)}</p>
+                             <p class="text-3xl font-bold text-primary mb-4">₹${parseFloat(product.price).toFixed(2)}</p>
                              ${buttonHtml}
                         </div>
                     </div>
@@ -641,7 +641,7 @@
                     item.innerHTML = `
                         <div>
                             <p class="font-bold text-white">${product.name}</p>
-                            <p class="text-sm text-gray-400">$${parseFloat(product.price).toFixed(2)}</p>
+                            <p class="text-sm text-gray-400">₹${parseFloat(product.price).toFixed(2)}</p>
                         </div>
                         <div class="flex space-x-2 flex-shrink-0">
                             <button class="update-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-1 px-3 rounded" data-product-id="${product.id}">Update</button>
