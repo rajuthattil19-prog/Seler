@@ -114,150 +114,77 @@
                 <button id="get-started-btn" class="bg-primary text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-500 transition duration-300">Get Started</button>
                 <button id="help-btn-splash" class="bg-gray-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-600 transition duration-300">Help</button>
             </div>
-            <div class="mt-16 md:mt-24 w-full max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
     <style>
-        /* === STYLES FOR SET 1: Blue/Purple Animated Border === */
-        .feature-card-container {
-            position: relative;
-            padding: 1px;
-            border-radius: 1rem;
-            overflow: hidden;
-        }
-        .feature-card-container::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 200%;
-            height: 200%;
-            z-index: 0;
-            background: conic-gradient(from var(--gradient-angle, 0deg), #a78bfa, #60a5fa, #10b981, #a78bfa);
-            transform: translate(-50%, -50%) rotate(var(--gradient-angle, 0deg));
-            animation: border-gradient-rotation 4s linear infinite;
-        }
-        .feature-card-content {
-            position: relative;
-            z-index: 1;
-            background-color: #1f2937;
-            border-radius: 0.95rem;
-        }
-        @keyframes border-gradient-rotation {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-
-        /* === STYLES FOR SET 2: Red/Orange Glowing Shadow === */
-        .glowing-card-container {
+        /* This is the updated CSS for the flowing glow effect */
+        .flowing-card-container {
             position: relative;
         }
-        .glowing-card-container::before {
+        .flowing-card-container::before {
             content: '';
             position: absolute;
             inset: -8px; 
             z-index: 0;
             border-radius: 1.25rem;
-            background: conic-gradient(from var(--gradient-angle, 0deg), #ff5733, #ffc300, #c70039, #ff5733);
+            
+            /* The key change is here: A large, non-repeating linear gradient */
+            background: linear-gradient(120deg, #c70039, #ff5733, #ffc300, #ff5733, #c70039);
+            background-size: 400% 400%; /* Make the gradient canvas very large */
+            
             filter: blur(15px); 
             opacity: 0.8;
-            animation: glowing-gradient-rotation 4s linear infinite;
+            
+            /* We now use a new animation that moves the background position */
+            animation: flow-gradient 6s linear infinite;
         }
-        .glowing-card-content {
+
+        .flowing-card-content {
             position: relative;
             z-index: 1;
             background-color: #1f2937;
             border-radius: 1rem;
         }
-        @keyframes glowing-gradient-rotation {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        
+        /* This new keyframe animation slides the background-position back and forth */
+        @keyframes flow-gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
     </style>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="feature-card-container">
-            <div class="feature-card-content p-6 h-full flex flex-col">
-                <h3 class="text-xl font-bold text-white mb-3">Secure & Verified</h3>
-                <p class="text-gray-400 flex-grow mb-4">Code is reviewed to ensure you get reliable, high-quality bots.</p>
-                <button class="bg-gray-700 text-white font-semibold py-2 px-4 rounded-lg hover:bg-gray-600 transition duration-300 self-start">Learn More</button>
-            </div>
-        </div>
-        <div class="feature-card-container">
-            <div class="feature-card-content p-6 h-full flex flex-col">
-                <h3 class="text-xl font-bold text-white mb-3">Instant Deployment</h3>
-                <p class="text-gray-400 flex-grow mb-4">Purchase and download bot source codes instantly to get started.</p>
-                <button class="bg-gray-700 text-white font-semibold py-2 px-4 rounded-lg hover:bg-gray-600 transition duration-300 self-start">Get Started</button>
-            </div>
-        </div>
-        <div class="feature-card-container">
-            <div class="feature-card-content p-6 h-full flex flex-col">
-                <h3 class="text-xl font-bold text-white mb-3">Admin Powered</h3>
-                <p class="text-gray-400 flex-grow mb-4">An intuitive admin dashboard allows for easy management.</p>
-                <button class="bg-gray-700 text-white font-semibold py-2 px-4 rounded-lg hover:bg-gray-600 transition duration-300 self-start">View Features</button>
-            </div>
+    <div class="flowing-card-container">
+        <div class="flowing-card-content p-6 h-full flex flex-col">
+            <h3 class="text-xl font-bold text-white mb-3">Fiery Fast</h3>
+            <p class="text-gray-400 flex-grow mb-4">Our platform is optimized for speed, from browsing to downloading.</p>
+            <button class="bg-gray-700 text-white font-semibold py-2 px-4 rounded-lg hover:bg-gray-600 transition duration-300 self-start">Check Speed</button>
         </div>
     </div>
 
-    <div class="my-12 md:my-16"></div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-        <div class="glowing-card-container">
-            <div class="glowing-card-content p-6 h-full flex flex-col">
-                <h3 class="text-xl font-bold text-white mb-3">Fiery Fast</h3>
-                <p class="text-gray-400 flex-grow mb-4">Our platform is optimized for speed, from browsing to downloading.</p>
-                <button class="bg-gray-700 text-white font-semibold py-2 px-4 rounded-lg hover:bg-gray-600 transition duration-300 self-start">Check Speed</button>
-            </div>
+    <div class="flowing-card-container">
+        <div class="flowing-card-content p-6 h-full flex flex-col">
+            <h3 class="text-xl font-bold text-white mb-3">Hot Deals</h3>
+            <p class="text-gray-400 flex-grow mb-4">Discover amazing bots at competitive prices you won't find anywhere else.</p>
+            <button class="bg-gray-700 text-white font-semibold py-2 px-4 rounded-lg hover:bg-gray-600 transition duration-300 self-start">Find a Deal</button>
         </div>
-        <div class="glowing-card-container">
-            <div class="glowing-card-content p-6 h-full flex flex-col">
-                <h3 class="text-xl font-bold text-white mb-3">Hot Deals</h3>
-                <p class="text-gray-400 flex-grow mb-4">Discover amazing bots at competitive prices you won't find anywhere else.</p>
-                <button class="bg-gray-700 text-white font-semibold py-2 px-4 rounded-lg hover:bg-gray-600 transition duration-300 self-start">Find a Deal</button>
-            </div>
-        </div>
-        <div class="glowing-card-container">
-            <div class="glowing-card-content p-6 h-full flex flex-col">
-                <h3 class="text-xl font-bold text-white mb-3">Burning Support</h3>
-                <p class="text-gray-400 flex-grow mb-4">Our dedicated support team is ready to help you with any issue.</p>
-                <button class="bg-gray-700 text-white font-semibold py-2 px-4 rounded-lg hover:bg-gray-600 transition duration-300 self-start">Contact Us</button>
-            </div>
+    </div>
+    
+    <div class="flowing-card-container">
+        <div class="flowing-card-content p-6 h-full flex flex-col">
+            <h3 class="text-xl font-bold text-white mb-3">Burning Support</h3>
+            <p class="text-gray-400 flex-grow mb-4">Our dedicated support team is ready to help you with any issue.</p>
+            <button class="bg-gray-700 text-white font-semibold py-2 px-4 rounded-lg hover:bg-gray-600 transition duration-300 self-start">Contact Us</button>
         </div>
     </div>
 </div>
 
-<script>
-    // Script for the first set of cards (Blue/Purple Border)
-    document.querySelectorAll('.feature-card-container').forEach(card => {
-        card.addEventListener('mouseenter', () => { card.style.animation = 'none'; });
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const angle = (Math.atan2(y - rect.height / 2, x - rect.width / 2) * 180 / Math.PI) - 90;
-            card.style.setProperty('--gradient-angle', `${angle}deg`);
-        });
-        card.addEventListener('mouseleave', () => { card.style.animation = ''; });
-    });
-
-    // Script for the second set of cards (Red/Orange Glow)
-    document.querySelectorAll('.glowing-card-container').forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            const beforeElement = getComputedStyle(card, '::before');
-            if (beforeElement) card.style.animationPlayState = 'paused';
-        });
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const angle = (Math.atan2(y - rect.height / 2, x - rect.width / 2) * 180 / Math.PI) - 90;
-            card.style.setProperty('--gradient-angle', `${angle}deg`);
-        });
-        card.addEventListener('mouseleave', () => {
-            const beforeElement = getComputedStyle(card, '::before');
-            if (beforeElement) card.style.animationPlayState = 'running';
-        });
-    });
-</script>
-```eof
+                
         </section>
 
         <!-- Authentication Page -->
